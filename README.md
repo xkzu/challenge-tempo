@@ -38,7 +38,7 @@
 # c. Compilar el proyecto #
 # Utilice Maven para compilar y empaquetar la aplicación: #
 
-# mvn clean package #
+# mvn clean install #
 
 # Esto generará el archivo JAR en la carpeta target. #
 
