@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: my-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-challengeDB}
+      POSTGRES_USER: ${POSTGRES_USER:-challengeuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-challengepass}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_HOST: db
+      POSTGRES_DB: ${POSTGRES_DB:-challengeDB}
+      POSTGRES_USER: ${POSTGRES_USER:-challengeuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-challengepass}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
