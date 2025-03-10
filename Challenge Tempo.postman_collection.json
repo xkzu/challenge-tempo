@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "9e731115-757e-4e01-a025-bd8af5857acd",
+		"name": "Challenge Tempo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31314317"
+	},
+	"item": [
+		{
+			"name": "Calculate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/calculate?num1=50.0&num2=20.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "50.0"
+						},
+						{
+							"key": "num2",
+							"value": "20.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
